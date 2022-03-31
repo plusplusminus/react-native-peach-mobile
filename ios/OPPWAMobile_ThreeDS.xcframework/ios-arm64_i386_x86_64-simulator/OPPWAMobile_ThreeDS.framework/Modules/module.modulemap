@@ -1,0 +1,11 @@
+framework module OPPWAMobile_ThreeDS {
+  umbrella header "OPPWAMobile_ThreeDS.h"
+
+  export *
+  module * { export * }
+}
+
+module OPPWAMobile_ThreeDS.Swift {
+    header "OPPWAMobile_ThreeDS-Swift.h"
+    requires objc
+}

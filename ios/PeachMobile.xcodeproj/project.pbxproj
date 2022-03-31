@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		443CDD7F232A1BFB00B61EEE /* PeachMobile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443CDD7E232A1BFB00B61EEE /* PeachMobile.swift */; };
-		443CDD86232A3B8D00B61EEE /* OPPWAMobile-Resources.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 443CDD84232A3B8D00B61EEE /* OPPWAMobile-Resources.bundle */; };
-		443CDD87232A3B8D00B61EEE /* OPPWAMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443CDD85232A3B8D00B61EEE /* OPPWAMobile.framework */; };
+		443CDD87232A3B8D00B61EEE /* OPPWAMobile.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443CDD85232A3B8D00B61EEE /* OPPWAMobile.xcframework */; };
+		A1D28C3327E0DC70003645AD /* ipworks3ds_sdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D28C3127E0DC70003645AD /* ipworks3ds_sdk.xcframework */; };
+		A1D28C3427E0DC70003645AD /* OPPWAMobile_ThreeDS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D28C3227E0DC70003645AD /* OPPWAMobile_ThreeDS.xcframework */; };
 		B3E7B58A1CC2AC0600A0062D /* PeachMobile.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* PeachMobile.m */; };
 /* End PBXBuildFile section */
 
@@ -29,8 +30,9 @@
 		134814201AA4EA6300B7C361 /* libPeachMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPeachMobile.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		443CDD7D232A1BFB00B61EEE /* PeachMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PeachMobile-Bridging-Header.h"; sourceTree = "<group>"; };
 		443CDD7E232A1BFB00B61EEE /* PeachMobile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeachMobile.swift; sourceTree = "<group>"; };
-		443CDD84232A3B8D00B61EEE /* OPPWAMobile-Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "OPPWAMobile-Resources.bundle"; sourceTree = "<group>"; };
-		443CDD85232A3B8D00B61EEE /* OPPWAMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OPPWAMobile.framework; sourceTree = "<group>"; };
+		443CDD85232A3B8D00B61EEE /* OPPWAMobile.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = OPPWAMobile.xcframework; sourceTree = "<group>"; };
+		A1D28C3127E0DC70003645AD /* ipworks3ds_sdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ipworks3ds_sdk.xcframework; sourceTree = "<group>"; };
+		A1D28C3227E0DC70003645AD /* OPPWAMobile_ThreeDS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = OPPWAMobile_ThreeDS.xcframework; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* PeachMobile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeachMobile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,8 +41,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				443CDD86232A3B8D00B61EEE /* OPPWAMobile-Resources.bundle in Frameworks */,
-				443CDD87232A3B8D00B61EEE /* OPPWAMobile.framework in Frameworks */,
+				443CDD87232A3B8D00B61EEE /* OPPWAMobile.xcframework in Frameworks */,
+				A1D28C3427E0DC70003645AD /* OPPWAMobile_ThreeDS.xcframework in Frameworks */,
+				A1D28C3327E0DC70003645AD /* ipworks3ds_sdk.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,8 +61,9 @@
 		443CDD83232A3B8D00B61EEE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				443CDD84232A3B8D00B61EEE /* OPPWAMobile-Resources.bundle */,
-				443CDD85232A3B8D00B61EEE /* OPPWAMobile.framework */,
+				A1D28C3127E0DC70003645AD /* ipworks3ds_sdk.xcframework */,
+				A1D28C3227E0DC70003645AD /* OPPWAMobile_ThreeDS.xcframework */,
+				443CDD85232A3B8D00B61EEE /* OPPWAMobile.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -248,7 +252,11 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
@@ -276,7 +284,11 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
